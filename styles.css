@@ -1,0 +1,31 @@
+*{}
+:root {
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+  }
+p{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+}
+
+#background{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(var(--Soft-violet), var(--Soft-blue));
+}
+
+#accordion-container{
+    width: 90%;
+    height: 70%;
+    background-color: white;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+.dropdown-arrow{
+    display: inline-block;
+}
+
+.question {
+    display: inline-block;
+}
