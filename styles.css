@@ -1,31 +1,250 @@
-*{}
 :root {
     --Soft-violet: hsl(273, 75%, 66%);
     --Soft-blue: hsl(240, 73%, 65%);
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
   }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 700;
+    margin:0;
+}
+
 p{
     font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400;
     font-size: 12px;
 }
 
 #background{
-    height: 100vh;
+    padding: 140px 24px 100px 24px;
+    box-sizing: border-box;
+    margin: 0;
     width: 100%;
     background-image: linear-gradient(var(--Soft-violet), var(--Soft-blue));
 }
 
-#accordion-container{
-    width: 90%;
-    height: 70%;
-    background-color: white;
-    border-radius: 10px;
-    display: block;
-    margin: auto;
+#FAQ-heading{
+
+    text-align: center;
+    padding: 24px 0 0 0;
+    
 }
-.dropdown-arrow{
+
+#accordion-container{
+    max-width: 375px;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    position: relative;
+    padding: 0 0 50px 0;
+
+}
+
+#image-container{
+    display: block;
+    position: relative;
+    z-index: 9;
+    top: 0;
+    margin-top: -100px;
+    height: 200px;
+}
+.image-shadow{
+
+    margin: 100px auto 0 auto;
+    display: block;
+    position: relative;
+    z-index: 5;
+
+
+}
+.image{
+    display: block;
+    margin: -56px auto 0 auto;
+    position: relative;
+    z-index: 6;
+    top: -160px;
+    left: -18px;
+}
+
+#box-container{
+    display: none;
+}
+
+#box{
+    display: none;
+}
+
+.desktop{
+    display: none;
+}
+
+.accordion-child-container{
+    position: relative;
+    margin: 24px;
+    border-bottom: 1px solid var(--Light-grayish-blue);
+}
+
+.accordion-child-container input{
+    position:absolute;
     display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height:100%;
+    width: 100%;
+    padding: 0;
+    margin: -3.5px 0 0 0;
+    z-index: 9;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.dropdown-arrow{
+    color: var(--Soft-red);
+    position:absolute;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 18px;
+    height:7px;
+    width: 10px;
+    padding: 0;
+    margin: -3.5px 0 0 0;
+
+}
+
+.accordion-child-container input:checked ~ .dropdown-arrow{
+    transform: scaleY(-1)
+}
+
+.answer{
+    display: none;
+    line-height: 18px;
+    width: 85%;
+    color:var(--Dark-grayish-blue);
+    margin: 0 0 12px 0;
+}
+
+.accordion-child-container input:checked ~ .answer{
+    display: block;
 }
 
 .question {
     display: inline-block;
+    width: 85%;
+    color:var(--Very-dark-grayish-blue);
+}
+
+.accordion-child-container input:checked ~ .question{
+    font-weight: 700;
+    
+}
+
+@media only screen and (min-width: 960px )/*  and (min-height: 544px) */ { 
+
+    #accordion-container{
+        min-width: 920px;
+        max-width: 920px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        max-height: 508px;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    #image-container{
+        width: 480px;
+        margin: 0;
+        position: relative;
+    }
+
+    .mobile{
+        display: none;
+    }
+    
+    .desktop {
+        display: inline-block;
+        position: relative;
+        margin: 0;
+        flex-grow: 1;
+        
+        
+    }
+    .image-shadow{
+        top:-425px;
+        right: 66px;
+        width: 965px;
+        height: 945px;
+        position: absolute;
+
+    }
+
+    .image{
+        position: absolute;
+        top: -60px;
+        left: -80px;
+    }
+
+    #box-container{
+        display: inline-block;
+        position: absolute;
+        z-index: 7;
+        left: -92px;
+        top: 78px;
+    }
+
+    #box{
+        display: inline-block;
+        position: fixed;
+        z-index: 7;
+
+        
+    }
+
+    #accordion-FAQ-container{
+        flex-grow: 1;
+        min-width: 50%;
+    }
+
+    #FAQ-heading{
+        text-align: left;
+        margin-left: 24px;
+    }
+
+    .accordion-child-container{
+        box-sizing: border-box;
+        width: 352px;
+    }
+
+    #background{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+    }
+
+    
+
+    
 }
