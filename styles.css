@@ -157,13 +157,13 @@ p{
 @media only screen and (min-width: 960px )/*  and (min-height: 544px) */ { 
 
     #accordion-container{
+        padding: 50px 0;
         min-width: 920px;
         max-width: 920px;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         align-content: center;
-        max-height: 508px;
         box-sizing: border-box;
         overflow: hidden;
         margin: auto;
@@ -242,6 +242,21 @@ p{
         align-content: center;
         align-items: center;
 
+    }
+    .accordion-child-container input{
+        z-index: 8;
+    }
+
+    .accordion-child-container{
+        z-index: 7;
+    }
+
+    .question{
+        z-index: 9;
+    }
+
+    input:hover ~ p.question {
+        color: var(--Soft-red);
     }
 
     
